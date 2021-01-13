@@ -1,4 +1,5 @@
-var asPython = {
+'use strict';
+const asPython = {
     Range: (start, stop, step) => {
         if (typeof stop == 'undefined') {
             stop = start;
@@ -16,18 +17,7 @@ var asPython = {
         }
         return result;
     },
-    GetElementFrom: (array) => {
-        if (Array.isArray(array)){
-            for (i=0; i<array.length; i++)
-                yield array[i];
-        }else{
-            throw `Type of"${array}" not is array!`;
-        }
-    },
-
+    
 };
 
-//export default asPython;
-
-var arra = asPython.Range(3, 10);
-console.log(asPython.GetElementFrom(arra).next());
+exports.default = asPython;
